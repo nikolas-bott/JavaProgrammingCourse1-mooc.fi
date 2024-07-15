@@ -4,18 +4,15 @@ import java.util.Scanner;
 public class LiquidContainers {
 
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
-
-
-        while (true) {
-            System.out.print("> ");
-
-            String input = scan.nextLine();
-            if (input.equals("quit")) {
-                break;
-            }
-
-        }
+        secondContainer second = new secondContainer();
+        firstContainer first = new firstContainer(second);
+        
+        
+        UserInterface user = new UserInterface(scan,first,second);
+        user.start();
+            
     }
 
 }
